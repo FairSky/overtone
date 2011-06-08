@@ -240,36 +240,32 @@
                      :tracks {}
                      :playing false}))
 
-(defn track [tname inst]
-  (let [t {:type :track
-           :name tname
-           :inst inst
-           :note-fn nil}]
-    (dosync (alter session* assoc-in [:tracks tname] t))))
+(defn track
+  "Create a named session track, optionally specifying the track instrument
+  and default instrument parameters."
+  ([tname] (track tname nil {}))
+  ([tname inst] (track tname inst {}))
+  ([tname inst inst-defaults]
+   (let [t {:type :track
+            :name tname
+            :inst inst
+            :inst-defaults inst-defaults
+            :pattern nil
+            :note-fn nil
+            :status :active}]
+     (dosync (alter session* assoc-in [:tracks tname] t)))))
 
 (defn remove-track
   [tname]
   (dosync (alter session* dissoc-in [:tracks] tname)))
 
-(defn track-fn [tname f]
-  (dosync (alter session* assoc-in [:tracks tname :note-fn] f)))
-
-(defn remove-track-fn [tname]
-  (dosync (alter session* dissoc-in [:tracks tname] :note-fn)))
+(defn update-track
+  [tname k v]
+  (dosync
+    (alter session* assoc-in [:tracks tname k] v)))
 
 (defn session-metro [m]
   (dosync (alter session* assoc :metro m)))
-
-(defn track-start
-  [t]
-  )
-
-(defn track-stop
-  [t]
-  )
-
-;(def m (:metro @session*))
-;(f m (m) kick)
 
 (defn playing?
   []
@@ -283,7 +279,7 @@
         beat (inc (metro))]
     (dosync (alter session* assoc :playing true))
     (doseq [[_ t] (:tracks @session*)]
-      ((:note-fn t) metro beat (:inst t)))))
+      ((:note-fn t) metro beat (:inst t) (:pattern t)))))
 
 (defn session-stop []
   (dosync (alter session* assoc :playing false)))

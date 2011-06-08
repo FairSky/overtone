@@ -14,6 +14,8 @@
 (defmacro defratio [rname ratio]
   `(defn ~rname [freq#] (* freq# ~ratio)))
 
+(def _ nil)  ; Nice for readable rhythms...
+
 ; Perfect consonance
 (defratio unison    1/1)
 (defratio octave    2/1)
