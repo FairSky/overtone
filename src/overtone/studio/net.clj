@@ -1,6 +1,6 @@
 (ns overtone.studio.net
   (:use [plasma api]
-        [plasma.net peer url address]
+        [plasma.net connection peer url address]
         overtone.core
         [overtone.studio sequencer])
   (:require [lamina.core :as lamina]))
