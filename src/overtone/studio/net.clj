@@ -7,6 +7,7 @@
 
 (def DEFAULT-PORT 2000)
 
+(def peers* (ref {}))
 (def peer* (ref nil))
 (def log* (atom []))
 
@@ -20,16 +21,26 @@
   [con pname pattern]
   (request con :pattern-update [{:pname pname :pattern pattern}]))
 
+(on-event :pattern-update :net-pattern-update
+          (fn [event]
+            (doseq [[_ con] @peers*]
+              (peer-update-pattern con (:pname event) (:pattern event)))))
+
 (defn peer-listen
   ([] (peer-listen DEFAULT-PORT))
   ([port]
    ;(set-port-forward 2000 "Overtone")
    (let [p (peer {:port port})]
-     (dosync (ref-set peer* p)))))
+     (dosync (ref-set peer* p))
+     (on-connect p
+                 (fn [con]
+                   (swap! peers* assoc (:url con) con))))))
 
 (defn peer-connect
   [host port]
-  (peer-connection @peer* (url "plasma" host port)))
+  (let [p-url (url "plasma" host port)]
+    (dosync
+      (alter peers* assoc p-url (peer-connection @peer* p-url)))))
 
 (peer-listen)
 
