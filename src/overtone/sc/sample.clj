@@ -3,7 +3,7 @@
      :author "Jeff Rose"}
   overtone.sc.sample
   (:use [clojure.java.io :only [file]]
-        [overtone.util lib]
+        [overtone.util helpers]
         [overtone.util event deps]
         [overtone.sc.machinery allocator]
         [overtone.sc.machinery.server comms]

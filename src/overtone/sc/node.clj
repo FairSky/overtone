@@ -1,5 +1,5 @@
 (ns overtone.sc.node
-  (:use [overtone.util lib]
+  (:use [overtone.util helpers]
         [overtone.util event deps]
         [overtone.sc bus server]
         [overtone.sc.machinery defaults allocator]

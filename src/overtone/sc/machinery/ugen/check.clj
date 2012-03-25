@@ -3,7 +3,7 @@
      :author "Jeff Rose & Christophe McKeon"}
   overtone.sc.machinery.ugen.check
   (:use [overtone.sc.machinery.ugen defaults]
-        [overtone.util.lib :only [overtone-ugen-name]]))
+        [overtone.util.helpers :only [overtone-ugen-name]]))
 
 (defn rate-name= [obj rate]
   (= (:rate-name obj) rate))

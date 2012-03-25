@@ -5,7 +5,7 @@
   (:use [clojure.core.incubator :only [dissoc-in]]
         [overtone.music rhythm pitch]
         [overtone.util event deps]
-        [overtone.util lib]
+        [overtone.util helpers]
         [overtone.sc.machinery defaults synthdef]
         [overtone.sc.machinery.ugen fn-gen defaults sc-ugen]
         [overtone.sc.machinery.server comms]

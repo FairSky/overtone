@@ -1,6 +1,6 @@
 (ns overtone.sc.cgens.demand
   (:use [overtone.sc defcgen ugens]
-        [overtone.util lib]))
+        [overtone.util helpers]))
 
 (defcgen duty
   "Demand results according to a stream of duration values"

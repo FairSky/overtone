@@ -1,7 +1,7 @@
 (ns overtone.sc.buffer
   (:use [clojure.java.io :only [file]]
         [overtone.helpers file]
-        [overtone.util lib]
+        [overtone.util helpers]
         [overtone.util event]
         [overtone.sc server info]
         [overtone.sc.machinery defaults allocator]

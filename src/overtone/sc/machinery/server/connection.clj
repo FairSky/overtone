@@ -5,7 +5,7 @@
         [overtone.config store]
         [overtone.util event deps]
         [overtone version]
-        [overtone.util.lib :only [print-ascii-art-overtone-logo]]
+        [overtone.util.helpers :only [print-ascii-art-overtone-logo]]
         [overtone.sc.machinery defaults]
         [overtone.sc.machinery.server comms]
         [overtone.osc]

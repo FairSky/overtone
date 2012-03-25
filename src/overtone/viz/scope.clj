@@ -8,7 +8,7 @@
            [javax.swing JFrame JPanel JSlider]
            [java.util.concurrent TimeoutException])
   (:use [clojure.stacktrace]
-        [overtone.util lib]
+        [overtone.util helpers]
         [overtone.util event deps]
         [overtone.sc.machinery defaults]
         [overtone.sc server synth ugens buffer node]

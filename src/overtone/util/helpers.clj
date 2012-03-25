@@ -1,13 +1,15 @@
 (ns
   ^{:doc "Library of general purpose utility functions for Overtone internals."
     :author "Jeff Rose and Sam Aaron"}
-  overtone.util.lib
+  overtone.util.helpers
   (:import [java.util ArrayList Collections]
            [java.util.concurrent TimeUnit TimeoutException])
   (:use [clojure.stacktrace]
         [clojure.pprint]
         [overtone.util doc]))
 
+;; Note: Functions in this namespace should generally be standalone,
+;; helper functions, rather than mini APIs or sub-systems.
 
 (defn to-str
   "If val is a keyword, return its name sans :, otherwise return val"

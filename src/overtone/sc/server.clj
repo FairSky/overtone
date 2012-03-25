@@ -8,7 +8,7 @@
   (:use [overtone.util event deps]
         [overtone.sc.machinery allocator]
         [overtone.sc.machinery.server connection comms]
-        [overtone.util.lib :only [deref!]]
+        [overtone.util.helpers :only [deref!]]
         [overtone.osc :only [in-osc-bundle]])
   (:require [overtone.util.log :as log]))
 

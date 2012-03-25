@@ -1,5 +1,5 @@
 (ns overtone.live
-  (:use [overtone.util lib ns])
+  (:use [overtone.util helpers ns])
   (:require clojure.stacktrace
             [overtone.config store]
             [overtone.midi]

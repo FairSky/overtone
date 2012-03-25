@@ -1,7 +1,7 @@
 (ns overtone.core
   (:use [overtone.util ns])
   (:require clojure.stacktrace
-            [overtone.util lib asset event freesound]
+            [overtone.util helpers asset event freesound]
             [overtone.config store]
             [overtone.midi]
             [overtone.osc]
@@ -18,7 +18,10 @@
             [overtone.gui control]))
 
 (immigrate
- 'overtone.util.lib
+ 'overtone.util.helpers
+ 'overtone.util.asset
+ 'overtone.util.event
+ 'overtone.util.freesound
  'overtone.osc
  'overtone.midi
  'overtone.algo.chance
@@ -58,9 +61,6 @@
  'overtone.repl.examples
  'overtone.repl.shell
  'overtone.repl.inst
- 'overtone.util.asset
- 'overtone.util.event
- 'overtone.util.freesound
  'overtone.version
  'overtone.viz.scope
  )

@@ -4,7 +4,7 @@
     [overtone.sc.machinery defaults synthdef]
     [overtone.sc.util :only (id-mapper)]
     [overtone.studio mixer fx]
-    [overtone.util lib]
+    [overtone.util helpers]
     [overtone.util event]))
 
 (defonce __MIXER-SYNTH__
@@ -100,7 +100,7 @@
                              container-group# instance-group# fx-group#
                              imixer# inst-bus# fx-chain#
                              volume# pan#)
-                      {:overtone.util.lib/to-string #(str (name (:type %)) ":" (:name %))})]
+                      {:overtone.util.helpers/to-string #(str (name (:type %)) ":" (:name %))})]
 
      (load-synthdef sdef#)
      (add-instrument inst#)

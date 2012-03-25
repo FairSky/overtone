@@ -4,7 +4,7 @@
   overtone.sc.info
   (:use [overtone.util event]
         [overtone.sc synth ugens node server]
-        [overtone.util lib]))
+        [overtone.util helpers]))
 
 (defonce output-bus-count* (atom nil))
 (defonce input-bus-count* (atom nil))

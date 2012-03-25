@@ -3,7 +3,7 @@
      :author "Jeff Rose and Sam Aaron"}
   overtone.music.time
   (:use [overtone.util event]
-        [overtone.util lib])
+        [overtone.util helpers])
   (:require [overtone.at-at :as at-at]))
 
 ;;Scheduled thread pool (created by at-at) which is to be used by default for

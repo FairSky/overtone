@@ -1,7 +1,7 @@
 (ns overtone.repl.ugens
   (:use [clojure.repl]
         [overtone.sc.machinery.ugen fn-gen specs]
-        [overtone.util lib doc]
+        [overtone.util helpers doc]
         [overtone.helpers.string]))
 
 (defn- map-terms-to-regexps

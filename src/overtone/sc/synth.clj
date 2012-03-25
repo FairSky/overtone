@@ -5,7 +5,7 @@
          serialized by the byte-spec defined in synthdef.clj."
     :author "Jeff Rose"}
   overtone.sc.synth
-  (:use [overtone.util lib old-contrib]
+  (:use [overtone.util helpers old-contrib]
         [overtone.util event counters]
         [overtone.music time]
         [overtone.sc.machinery.ugen fn-gen defaults common specs sc-ugen]

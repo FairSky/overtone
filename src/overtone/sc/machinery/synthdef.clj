@@ -6,7 +6,7 @@
   overtone.sc.machinery.synthdef
   (:import [java.net URL])
   (:use [overtone.byte-spec]
-        [overtone.util lib]
+        [overtone.util helpers]
         [overtone.util event deps]
         [overtone.sc server]
         [overtone.sc.machinery.server comms]

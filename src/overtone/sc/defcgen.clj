@@ -4,7 +4,7 @@
   overtone.sc.defcgen
 
   (:use [clojure.walk :as walk]
-        [overtone.util lib]
+        [overtone.util helpers]
         [overtone.sc ugens]
         [overtone.sc.machinery.ugen fn-gen doc defaults]))
 

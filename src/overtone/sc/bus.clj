@@ -2,7 +2,7 @@
   (:import [java.util.concurrent TimeoutException])
   (:use [overtone.sc.machinery defaults allocator]
         [overtone.sc.machinery.server comms]
-        [overtone.util lib]
+        [overtone.util helpers]
         [overtone.sc server]))
 
 ;; ## Busses
