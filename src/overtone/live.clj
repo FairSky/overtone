@@ -12,7 +12,7 @@
             [overtone.music rhythm pitch tuning time]
             [overtone.studio inst mixer util fx wavetable]
             [overtone.repl ugens examples shell inst]
-            [overtone.libs asset event freesound]
+            [overtone.util asset event freesound]
             [overtone.version]
             [overtone.viz scope]
             [overtone.gui control]))
@@ -57,9 +57,9 @@
  'overtone.repl.examples
  'overtone.repl.shell
  'overtone.repl.inst
- 'overtone.libs.asset
- 'overtone.libs.event
- 'overtone.libs.freesound
+ 'overtone.util.asset
+ 'overtone.util.event
+ 'overtone.util.freesound
  'overtone.version
  'overtone.viz.scope)
 

@@ -4,7 +4,7 @@
   overtone.studio.mixer
   (:use [clojure.core.incubator :only [dissoc-in]]
         [overtone.music rhythm pitch]
-        [overtone.libs event deps]
+        [overtone.util event deps]
         [overtone.util lib]
         [overtone.sc.machinery defaults synthdef]
         [overtone.sc.machinery.ugen fn-gen defaults sc-ugen]

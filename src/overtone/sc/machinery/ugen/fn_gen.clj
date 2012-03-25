@@ -3,7 +3,7 @@
       :author "Jeff Rose, Christophe McKeon and Sam Aaron"}
   overtone.sc.machinery.ugen.fn-gen
   (:use [overtone.util lib]
-        [overtone.libs counters]
+        [overtone.util counters]
         [overtone.helpers seq]
         [overtone.sc bindings]
         [overtone.sc.machinery.ugen sc-ugen defaults specs special-ops intern-ns]

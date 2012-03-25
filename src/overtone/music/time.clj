@@ -2,7 +2,7 @@
   ^{:doc "Functions to help manage and structure computation in time."
      :author "Jeff Rose and Sam Aaron"}
   overtone.music.time
-  (:use [overtone.libs event]
+  (:use [overtone.util event]
         [overtone.util lib])
   (:require [overtone.at-at :as at-at]))
 

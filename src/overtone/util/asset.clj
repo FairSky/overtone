@@ -5,7 +5,7 @@
            allows assets to be shared by multiple projects on the same system
            without needing to duplicate them"
       :author "Sam Aaron"}
-  overtone.libs.asset
+  overtone.util.asset
   (:use [clojure.java.io :only [file]]
    [clojure.string :only [split]]
         [overtone.helpers file zip string]

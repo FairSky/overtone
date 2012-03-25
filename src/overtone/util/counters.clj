@@ -1,7 +1,7 @@
 (ns
     ^{:doc "Basic keyword indexed integer counters"
       :author "Jeff Rose and Sam Aaron"}
-  overtone.libs.counters)
+  overtone.util.counters)
 
 (defonce counters* (atom {}))
 

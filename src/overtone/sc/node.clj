@@ -1,6 +1,6 @@
 (ns overtone.sc.node
   (:use [overtone.util lib]
-        [overtone.libs event deps]
+        [overtone.util event deps]
         [overtone.sc bus server]
         [overtone.sc.machinery defaults allocator]
         [overtone.sc.machinery.server comms]

@@ -2,7 +2,7 @@
     ^{:doc "Functions for returning information regarding the connected SC server"
       :author "Sam Aaron"}
   overtone.sc.info
-  (:use [overtone.libs event]
+  (:use [overtone.util event]
         [overtone.sc synth ugens node server]
         [overtone.util lib]))
 

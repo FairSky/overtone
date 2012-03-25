@@ -7,7 +7,7 @@
   (:import [java.net URL])
   (:use [overtone.byte-spec]
         [overtone.util lib]
-        [overtone.libs event deps]
+        [overtone.util event deps]
         [overtone.sc server]
         [overtone.sc.machinery.server comms]
         [overtone.helpers.file :only [resolve-tilde-path]]

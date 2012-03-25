@@ -4,7 +4,7 @@
   overtone.sc.sample
   (:use [clojure.java.io :only [file]]
         [overtone.util lib]
-        [overtone.libs event deps]
+        [overtone.util event deps]
         [overtone.sc.machinery allocator]
         [overtone.sc.machinery.server comms]
         [overtone.sc server synth ugens buffer]

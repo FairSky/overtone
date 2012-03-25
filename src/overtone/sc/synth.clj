@@ -6,7 +6,7 @@
     :author "Jeff Rose"}
   overtone.sc.synth
   (:use [overtone.util lib old-contrib]
-        [overtone.libs event counters]
+        [overtone.util event counters]
         [overtone.music time]
         [overtone.sc.machinery.ugen fn-gen defaults common specs sc-ugen]
         [overtone.sc.machinery synthdef]
@@ -496,8 +496,8 @@
         (swap! active-synth-nodes* assoc (:id synth-node) synth-node))
       synth-node))
 
-(defrecord-ifn Synth [name ugens sdef args params instance-fn]
-               (partial synth-player name params))
+(defrecord-ifn Synth [name ugens sdef args instance-fn]
+               (partial synth-player name))
 
 (defn update-tap-data
   [msg]
@@ -518,7 +518,6 @@
   `(let [[sname# params# ugens# constants#] (pre-synth ~@args)
          sdef# (synthdef sname# params# ugens# constants#)
          arg-names# (map :name params#)
-         params-with-vals# (map #(assoc % :value (atom (:default %))) params#)
          instance-fn# (apply comp (map :instance-fn (filter :instance-fn (map meta ugens#))))
          smap# (with-meta
                  (map->Synth
@@ -526,7 +525,6 @@
                    :ugens ugens#
                    :sdef sdef#
                    :args arg-names#
-                   :params params-with-vals#
                    :instance-fn instance-fn#})
                  {:overtone.util.live/to-string #(str (name (:type %)) ":" (:name %))})]
      (load-synthdef sdef#)

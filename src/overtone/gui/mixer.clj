@@ -3,7 +3,7 @@
         [overtone.studio mixer inst]
         overtone.gui.dial
         overtone.gui.adjustment-popup
-        [overtone.libs event])
+        [overtone.util event])
   (:require [seesaw.bind :as bind]))
 
 (def ^{:private true} CHAN-WIDTH  100)

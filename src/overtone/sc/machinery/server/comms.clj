@@ -1,6 +1,6 @@
 (ns overtone.sc.machinery.server.comms
   (:use [overtone.sc.machinery.server osc-validator]
-        [overtone.libs event counters]
+        [overtone.util event counters]
         [overtone.util.lib :only [uuid deref!]])
   (:require [overtone.util.log :as log]))
 

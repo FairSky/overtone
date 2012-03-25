@@ -2,7 +2,7 @@
   (:use [clojure.java.io :only [file]]
         [overtone.helpers file]
         [overtone.util lib]
-        [overtone.libs event]
+        [overtone.util event]
         [overtone.sc server info]
         [overtone.sc.machinery defaults allocator]
         [overtone.sc.machinery.server comms connection]

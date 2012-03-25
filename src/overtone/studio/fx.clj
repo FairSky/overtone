@@ -2,7 +2,7 @@
     ^{:doc "Audio effects library"
       :author "Jeff Rose"}
   overtone.studio.fx
-  (:use [overtone.libs event]
+  (:use [overtone.util event]
         [overtone.sc synth ugens]))
 
 (def BITS 32)

@@ -1,9 +1,9 @@
 (ns
     ^{:doc "An API for interacting with the awesome free online sample resource
             freesound.org"}
-  overtone.libs.freesound
+  overtone.util.freesound
   (:require [clojure.data.json :as json]
-            [overtone.libs.asset :as asset]))
+            [overtone.util.asset :as asset]))
 
 (def ^:dynamic *api-key* "47efd585321048819a2328721507ee23")
 

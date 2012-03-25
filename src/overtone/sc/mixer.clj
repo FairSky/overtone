@@ -2,7 +2,7 @@
     ^{:doc "Overtone mixers for left, right and mono channels"
       :author "Sam Aaron"}
   overtone.sc.mixer
-  (:use [overtone.libs deps event]
+  (:use [overtone.util deps event]
         [overtone.helpers file]
         [overtone.sc synth ugens server info node buffer]
         [overtone.sc.machinery defaults]

@@ -2,7 +2,7 @@
     ^{:doc "A basic dependency system for specifying the execution of
            fns once dependencies have been met."
       :author "Sam Aaron & Jeff Rose"}
-  overtone.libs.deps
+  overtone.util.deps
   (:require [clojure.set :as set]
             [overtone.util.log :as log]))
 

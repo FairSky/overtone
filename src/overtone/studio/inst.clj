@@ -5,7 +5,7 @@
     [overtone.sc.util :only (id-mapper)]
     [overtone.studio mixer fx]
     [overtone.util lib]
-    [overtone.libs event]))
+    [overtone.util event]))
 
 (defonce __MIXER-SYNTH__
   (defsynth inst-mixer [in-bus 10 out-bus 0
