@@ -1,25 +1,25 @@
 (ns
     ^{:doc "Useful file manipulation fns"
       :author "Sam Aaron"}
-  overtone.helpers.file
+  overtone.util.file
   (:import [java.net URL]
            [java.io StringWriter])
-  (:use [overtone.helpers.string]
+  (:use [overtone.util.string]
         [clojure.java.io]
-        [overtone.helpers.system :only [windows-os?]])
+        [overtone.util.system :only [windows-os?]])
   (:require [org.satta.glob :as satta-glob]
             [clojure.string :as str]))
 
-(def ^{:dynamic true} *verbose-overtone-file-helpers* false)
+(def ^{:dynamic true} *verbose-overtone-file-util* false)
 
 (defn print-if-verbose
-  "Prints the arguments if *verbose-overtone-file-helpers* is bound to true. If
+  "Prints the arguments if *verbose-overtone-file-util* is bound to true. If
   it is also bound to an integer, will print a corresponding number of spaces at
   the start of each line to indent the output."
   [& to-print]
-  (when *verbose-overtone-file-helpers*
-    (when (integer? *verbose-overtone-file-helpers*)
-      (dotimes [_ *verbose-overtone-file-helpers*] (print " ")))
+  (when *verbose-overtone-file-util*
+    (when (integer? *verbose-overtone-file-util*)
+      (dotimes [_ *verbose-overtone-file-util*] (print " ")))
     (apply println to-print)))
 
 (defn pretty-file-size
@@ -206,7 +206,7 @@
 (defn- remote-file-copy [in-stream out-stream file-size]
   "Similar to  the corresponding implementation of #'do-copy in 'clojure.java.io
   but also tracks how many bytes have been downloaded and prints percentage
-  statements when *verbose-overtone-file-helpers* is bound to true."
+  statements when *verbose-overtone-file-util* is bound to true."
   (let [buf-size 2048
         buffer   (make-array Byte/TYPE buf-size)
         slices   (percentage-slices file-size 100)]
@@ -402,7 +402,7 @@
   make to download the file and also the wait-t between attempts in ms (defaults
   to 5000 ms)
 
-  Verbose mode is enabled by binding *verbose-overtone-file-helpers* to true."
+  Verbose mode is enabled by binding *verbose-overtone-file-util* to true."
   ([url path]
      (print-download-file url)
      (download-file* url path))

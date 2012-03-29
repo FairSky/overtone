@@ -1,7 +1,7 @@
 (ns overtone.sc.cgens.mix
   (:use [overtone.sc defcgen ugens]
         [overtone.util helpers]
-        [overtone.helpers stereo]))
+        [overtone.util stereo]))
 
 (defcgen mix
   "Mix down (sum) a list of input channels into a single channel."

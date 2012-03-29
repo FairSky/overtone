@@ -3,9 +3,9 @@
      :author "Jeff Rose"}
   overtone.config.store
   (:use [overtone.config file-store]
-        [overtone.helpers.string :only [capitalize]]
-        [overtone.helpers.system :only [get-os system-user-name]]
-        [overtone.helpers.file :only [mkdir! file-exists? path-exists? mv!]]
+        [overtone.util.string :only [capitalize]]
+        [overtone.util.system :only [get-os system-user-name]]
+        [overtone.util.file :only [mkdir! file-exists? path-exists? mv!]]
         [overtone version]
         [clojure.java.io :only [delete-file]]))
 

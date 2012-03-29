@@ -1,9 +1,9 @@
 (ns
     ^{:doc "Audio file encoding functions"
       :author "Sam Aaron"}
-  overtone.helpers.audio-file
+  overtone.util.audio-file
   (:use [clojure.java.io :only [file]]
-        [overtone.helpers.file :only [resolve-tilde-path]])
+        [overtone.util.file :only [resolve-tilde-path]])
   (:import [javax.sound.sampled AudioFormat AudioFileFormat AudioFormat$Encoding
                                 AudioFileFormat$Type AudioInputStream AudioSystem]
            [java.io ByteArrayInputStream]

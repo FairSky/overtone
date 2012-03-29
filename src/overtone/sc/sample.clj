@@ -9,7 +9,7 @@
         [overtone.sc.machinery.server comms]
         [overtone.sc server synth ugens buffer]
         [overtone.sc.cgens buf-io io]
-        [overtone.helpers.file :only [glob canonical-path resolve-tilde-path mk-path]]))
+        [overtone.util.file :only [glob canonical-path resolve-tilde-path mk-path]]))
 
 ; Define a default wav player synth
 (defonce __DEFINE-PLAYERS__
@@ -91,7 +91,7 @@
           (apply load-sample* path args))))))
 
 (defn load-samples
-  "Takes a directoy path or glob path (see #'overtone.helpers.file/glob) and
+  "Takes a directoy path or glob path (see #'overtone.util.file/glob) and
   loads up all matching samples and returns a seq of maps representing
   information for each loaded sample (see load-sample). Samples should be in
   .aiff or .wav format."

@@ -1,17 +1,17 @@
 (ns overtone.core
   (:use [overtone.util ns])
   (:require clojure.stacktrace
-            [overtone.util helpers asset event freesound]
+            [overtone.util helpers file asset event freesound]
             [overtone.config store]
             [overtone.midi]
             [overtone.osc]
             [overtone.algo chance scaling trig]
             [overtone.sc bindings buffer bus envelope example ugens info
-                         mixer node sample server synth trigger]
+                         node sample server synth trigger]
             [overtone.sc.cgens oscillators demand mix io buf-io env tap]
             [overtone.sc ugens defcgen]
             [overtone.music rhythm pitch tuning time]
-            [overtone.studio mixer inst util fx wavetable]
+            [overtone.studio core inst util fx wavetable]
             [overtone.repl ugens examples shell inst]
             [overtone.version]
             [overtone.viz scope]
@@ -19,6 +19,7 @@
 
 (immigrate
  'overtone.util.helpers
+ 'overtone.util.file
  'overtone.util.asset
  'overtone.util.event
  'overtone.util.freesound
@@ -43,7 +44,6 @@
  'overtone.sc.cgens.env
  'overtone.sc.cgens.tap
  'overtone.sc.info
- 'overtone.sc.mixer
  'overtone.sc.node
  'overtone.sc.sample
  'overtone.sc.server
@@ -53,7 +53,7 @@
  'overtone.music.pitch
  'overtone.music.tuning
  'overtone.music.time
- 'overtone.studio.mixer
+ 'overtone.studio.core
  'overtone.studio.inst
  'overtone.studio.fx
  'overtone.studio.wavetable

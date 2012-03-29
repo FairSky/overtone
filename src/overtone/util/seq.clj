@@ -1,7 +1,7 @@
 (ns
     ^{:doc "Helper functions for manipulating and testing sequences"
       :author "Sam Aaron"}
-  overtone.helpers.seq)
+  overtone.util.seq)
 
 (defn consecutive-ints?
   "Checks whether seq s consists of consecutive integers

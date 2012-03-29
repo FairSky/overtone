@@ -1,6 +1,6 @@
 (ns overtone.sc.cgens.audio-in
   (:use [overtone.sc defcgen ugens]
-        [overtone.helpers seq]))
+        [overtone.util seq]))
 
 (defcgen sound-in
   "read audio from hardware inputs"

@@ -1,7 +1,7 @@
 (ns
     ^{:doc "Audio position fns"
       :author "Jeff Rose"}
-  overtone.helpers.stereo)
+  overtone.util.stereo)
 
 (defn splay-pan
   "Given n channels and a center point, returns a position in a stereo field

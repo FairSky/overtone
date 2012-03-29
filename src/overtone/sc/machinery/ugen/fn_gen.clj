@@ -2,9 +2,7 @@
     ^{:doc "Code to generate the ugen fns"
       :author "Jeff Rose, Christophe McKeon and Sam Aaron"}
   overtone.sc.machinery.ugen.fn-gen
-  (:use [overtone.util helpers]
-        [overtone.util counters]
-        [overtone.helpers seq]
+  (:use [overtone.util helpers counters seq]
         [overtone.sc bindings]
         [overtone.sc.machinery.ugen sc-ugen defaults specs special-ops intern-ns]
         [overtone.sc.machinery.ugen.metadata unaryopugen binaryopugen])

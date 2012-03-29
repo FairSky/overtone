@@ -7,8 +7,8 @@
       :author "Sam Aaron"}
   overtone.util.asset
   (:use [clojure.java.io :only [file]]
-   [clojure.string :only [split]]
-        [overtone.helpers file zip string]
+        [clojure.string :only [split]]
+        [overtone.util file zip string]
         [overtone.config.store :only [OVERTONE-DIRS]]))
 
 (def ^{:dynamic true} *cache-root* (:assets OVERTONE-DIRS))

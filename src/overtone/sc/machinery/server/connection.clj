@@ -10,7 +10,7 @@
         [overtone.sc.machinery.server comms]
         [overtone.osc]
         [overtone.osc.decode :only [osc-decode-packet]]
-        [overtone.helpers.file :only [file-exists?]])
+        [overtone.util.file :only [file-exists?]])
   (:require [overtone.util.log :as log]))
 
 (defonce server-thread*       (ref nil))

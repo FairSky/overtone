@@ -1,12 +1,12 @@
 (ns overtone.sc.buffer
   (:use [clojure.java.io :only [file]]
-        [overtone.helpers file]
+        [overtone.util file]
         [overtone.util helpers]
         [overtone.util event]
         [overtone.sc server info]
         [overtone.sc.machinery defaults allocator]
         [overtone.sc.machinery.server comms connection]
-        [overtone.helpers.audio-file]
+        [overtone.util.audio-file]
         [overtone.sc.util :only [id-mapper]]))
 
 (defrecord BufferInfo [id size n-channels rate n-samples rate-scale duration])

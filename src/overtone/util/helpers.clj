@@ -1,5 +1,5 @@
 (ns
-  ^{:doc "Library of general purpose utility functions for Overtone internals."
+  ^{:doc "Library of general purpose utility functions for Overtone."
     :author "Jeff Rose and Sam Aaron"}
   overtone.util.helpers
   (:import [java.util ArrayList Collections]

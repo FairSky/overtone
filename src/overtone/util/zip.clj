@@ -1,11 +1,11 @@
 (ns
     ^{:doc "Useful zip manipulation fns"
       :author "Sam Aaron"}
-  overtone.helpers.zip
+  overtone.util.zip
   (:import [java.util.zip ZipFile ZipEntry ZipInputStream]
            [java.io StringWriter  FileInputStream FileOutputStream])
   (:use [clojure.java.io :only [file]]
-        [overtone.helpers file])
+        [overtone.util file])
   (:require [org.satta.glob :as satta-glob]
             [clojure.java.io :as io]))
 

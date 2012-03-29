@@ -3,7 +3,7 @@
      :author "Sam Aaron & Jeff Rose"}
   overtone.sc.machinery.ugen.doc
   (:use [overtone.sc.machinery.ugen defaults]
-        [overtone.helpers.string :only [capitalize]]
+        [overtone.util.string :only [capitalize]]
         [overtone.util helpers doc]))
 
 (defn- args-str

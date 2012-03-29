@@ -5,8 +5,6 @@
   (:import [java.io FileOutputStream FileInputStream])
   (:use [clojure.pprint]))
 
-
-
 (defonce config*  (ref {}))
 (defonce STORE :file)
 (defonce store-path* (ref false))

@@ -1,7 +1,7 @@
 (ns
     ^{:doc "Useful string manipulation fns"
       :author "Sam Aaron"}
-  overtone.helpers.string)
+  overtone.util.string)
 
 (defn chop-last
   "Removes the last char in str. Returns empty string unmodified"

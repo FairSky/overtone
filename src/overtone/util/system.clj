@@ -1,7 +1,7 @@
 (ns
     ^{:doc "Useful system information fns"
       :author "Sam Aaron and Jeff Rose"}
-  overtone.helpers.system)
+  overtone.util.system)
 
 (defn system-user-name
   "returns the name of the current user"

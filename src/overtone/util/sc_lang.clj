@@ -1,6 +1,6 @@
-(ns overtone.helpers.sc-lang
+(ns overtone.util.sc-lang
   (:use [clojure.core incubator]
-        [overtone.util helpers])
+        [overtone.util util])
   (:require [clojure.zip :as z]))
 
 (defn- prepend-child
