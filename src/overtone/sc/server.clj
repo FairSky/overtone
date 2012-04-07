@@ -5,10 +5,11 @@
       :author "Jeff Rose"}
   overtone.sc.server
   (:import [java.util.concurrent TimeoutException])
-  (:use [overtone.util event deps]
+  (:use [overtone.util deps]
+        [overtone.util.helpers :only [deref!]]
+        [overtone.libs handlers]
         [overtone.sc.machinery allocator]
         [overtone.sc.machinery.server connection comms]
-        [overtone.util.helpers :only [deref!]]
         [overtone.osc :only [in-osc-bundle]])
   (:require [overtone.util.log :as log]))
 

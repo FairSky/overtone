@@ -1,6 +1,7 @@
 (ns overtone.sc.machinery.server.comms
   (:use [overtone.sc.machinery.server osc-validator]
-        [overtone.util event counters]
+        [overtone.util counters]
+        [overtone.libs handlers]
         [overtone.util.helpers :only [uuid deref!]])
   (:require [overtone.util.log :as log]))
 
@@ -10,12 +11,12 @@
 
 ;; The base handler for receiving osc messages just forwards the message on
 ;; as an event using the osc path as the event key.
-(on-sync-event :osc-msg-received
-               (fn [{{path :path args :args} :msg}]
-                 (when @osc-debug*
-                   (println "Receiving: " path args))
-                 (event path :path path :args args))
-               ::osc-receiver)
+(add-sync-handler :osc-msg-received
+                  ::osc-receiver
+                  (fn [{{path :path args :args} :msg}]
+                    (when @osc-debug*
+                      (println "Receiving: " path args))
+                    (event path :path path :args args)))
 
 (defn- massage-numerical-args
   "Massage numerical args to the form SC would like them. Currently
@@ -125,11 +126,10 @@
   ([path matcher-fn]
      (let [p (promise)
            key (uuid)]
-       (on-sync-event path
-                      (fn [info]
-                        (when (or (nil? matcher-fn)
-                                  (matcher-fn info))
-                          (deliver p info)
-                          :overtone/remove-handler))
-                      key)
-    p)))
+       (add-sync-handler path :overtone/remove-handler
+                         (fn [info]
+                           (when (or (nil? matcher-fn)
+                                     (matcher-fn info))
+                             (deliver p info)))
+                         key)
+       p)))

@@ -3,7 +3,8 @@
            [supercollider ScSynth ScSynthStartedListener MessageReceivedListener])
   (:use [clojure.java shell]
         [overtone.config store]
-        [overtone.util event deps]
+        [overtone.util deps]
+        [overtone.libs handlers]
         [overtone version]
         [overtone.util.helpers :only [print-ascii-art-overtone-logo]]
         [overtone.sc.machinery defaults]
